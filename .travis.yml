@@ -14,10 +14,10 @@ script:
 deploy:
   provider: elasticbeanstalk
   region: "sa-east-1"
-  app: "dk-react"
+  app: "dkreact"
   env: "Dkreact-env"
   bucket_name: "elasticbeanstalk-sa-east-1-203958231716"
-  bucket_path: "dk-react"
+  bucket_path: "dkreact"
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KY
