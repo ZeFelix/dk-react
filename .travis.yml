@@ -10,3 +10,15 @@ before_install:
 
 script:
   - docker run -e CI=true felix/dk-react yarn run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "sa-east-1"
+  app: "dk-react"
+  env: "Dkreact-env"
+  bucket_name: "elasticbeanstalk-sa-east-1-203958231716"
+  bucket_path: "dk-react"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KY
+  secret_access_key: $AWS_SECRET_KEY
